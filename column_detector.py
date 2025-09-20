@@ -1,5 +1,5 @@
 import pandas as pd
-def column_detector(df,threshold=3):
+def detect_column_types(df,threshold=3):
     column_types={}
     for col in df.columns:
         unique_vals=df[col].nunique(dropna=True)
@@ -25,4 +25,4 @@ data = {
 }
 
 df=pd.DataFrame(data)
-print(column_detector(df))
+print(detect_column_types(df))
