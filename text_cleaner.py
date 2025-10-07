@@ -5,16 +5,6 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
 class TextCleaner:
-    """
-    A utility class to clean and preprocess text data.
-    Features:
-        - Remove punctuation
-        - Remove filler words (e.g., "uh", "um", "like")
-        - Remove stopwords
-        - Lowercasing
-        - Lemmatization (optional)
-    """
-
     def __init__(self, remove_stopwords=True, lemmatize=True):
         self.remove_stopwords = remove_stopwords
         self.lemmatize = lemmatize
@@ -23,7 +13,6 @@ class TextCleaner:
         self.filler_words = {"uh", "um", "like", "you know", "actually", "basically", "literally"}
 
     def clean_text(self, text: str) -> str:
-        """Clean and preprocess a single string of text."""
         if not isinstance(text, str):
             return ""
 
@@ -46,7 +35,6 @@ class TextCleaner:
         return " ".join(tokens)
 
     def clean_dataframe(self, df: pd.DataFrame, text_columns: list):
-        """Clean text columns in a DataFrame."""
         df_copy = df.copy()
         for col in text_columns:
             df_copy[col] = df_copy[col].astype(str).apply(self.clean_text)
@@ -67,3 +55,4 @@ if __name__ == "__main__":
     cleaned_df = cleaner.clean_dataframe(df, ["Review"])
     print("Before cleaning:\n", df["Review"])
     print("\nAfter cleaning:\n", cleaned_df["Review"])
+
