@@ -18,11 +18,19 @@ def detect_column_types(df,threshold=3):
             column_types[col]="unknown"
     return column_types
 
-data = {
-    "Age": [23, 25, 30, 40],
-    "Gender": ["M", "F", "M", "F"],
-    "Review": ["Good", "Excellent product, very useful!", "Nice", "Bad experience"]
-}
 
-df=pd.DataFrame(data)
+
+df = pd.DataFrame({
+        "Age": [23, 25, 30, 40, 29, 35],
+        "Salary": [3000, 3500, 4000, 4200, 5000, 5500],  # another numerical col
+        "Gender": ["M", "F", "M", "M", "F", "F"],
+        "Review": [
+            "Good product",
+            "Excellent service and fast delivery",
+            "Bad experience",
+            "Nice",
+            "Very useful and handy",
+            "Average quality"
+        ]
+    }) 
 print(detect_column_types(df))

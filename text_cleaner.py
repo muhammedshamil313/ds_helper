@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
 class TextCleaner:
+
     def __init__(self, remove_stopwords=True, lemmatize=True):
         self.remove_stopwords = remove_stopwords
         self.lemmatize = lemmatize
@@ -55,4 +56,3 @@ if __name__ == "__main__":
     cleaned_df = cleaner.clean_dataframe(df, ["Review"])
     print("Before cleaning:\n", df["Review"])
     print("\nAfter cleaning:\n", cleaned_df["Review"])
-
