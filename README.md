@@ -44,29 +44,22 @@ This project demonstrates **modular programming** and **open-source library stru
    cd "C:\Users\shami\OneDrive\Desktop\ds_helper"
 Install the package locally:
 
-bash
-Copy code
 pip install .
 Install required dependencies (if not already installed):
 
-bash
-Copy code
 pip install pandas matplotlib seaborn wordcloud nltk
 (Optional) Download NLTK data for text processing:
 
-python
-Copy code
 import nltk
 nltk.download('wordnet')
 nltk.download('omw-1.4')
 nltk.download('stopwords')
+
  Usage Example
-python
-Copy code
 import pandas as pd
 from ds_helper import detect_column_types, visualize, TextCleaner
 
-# Example dataset
+## Example dataset
 df = pd.DataFrame({
     "Age": [23, 25, 30, 40, 29, 35],
     "Salary": [3000, 3500, 4000, 4200, 5000, 5500],
@@ -81,13 +74,13 @@ df = pd.DataFrame({
     ]
 })
 
-# 1️⃣ Detect column types
+### 1️⃣ Detect column types
 print(detect_column_types(df))
 
-# 2️⃣ Visualize the data automatically
+### 2️⃣ Visualize the data automatically
 visualize(df)
 
-# 3️⃣ Clean text data
+### 3️⃣ Clean text data
 cleaner = TextCleaner()
 cleaned_df = cleaner.clean_dataframe(df, ["Review"])
 print(cleaned_df)
@@ -95,20 +88,18 @@ print(cleaned_df)
  Test with Real Dataset (Example)
 You can test ds_helper using a built-in dataset from Seaborn (e.g., Titanic):
 
-python
-Copy code
 import seaborn as sns
 from ds_helper import detect_column_types, visualize, TextCleaner
 
 titanic = sns.load_dataset("titanic")
 
-# Detect types
+### Detect types
 print(detect_column_types(titanic))
 
-# Visualize data
+### Visualize data
 visualize(titanic)
 
-# Clean sample text column
+### Clean sample text column
 sample = titanic[["who", "embarked"]].dropna().head(5)
 cleaner = TextCleaner()
 print(cleaner.clean_dataframe(sample, ["who"]))
