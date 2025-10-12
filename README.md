@@ -1,40 +1,45 @@
-ds_helper Library
+# 🧠 ds_helper Library
 
-Created by: Muhammed Shamil T P
+### Created by: **Muhammed Shamil**  
+### Course: **BCAP204 – Data Science Project**  
+### Week 4: **ds_helper Library Integration**  
+### Deadline: **7th October**
 
-**Project Overview**
+---
+
+## 📘 Project Overview
 
 **ds_helper** is a lightweight and reusable Python library designed to simplify **data analysis and preprocessing** tasks.  
-It integrates three key modules — _column_detector, auto_visualizer, and text_cleaner_ — to help identify data types, visualize datasets automatically, and clean text data efficiently.
+It integrates three key modules — `column_detector`, `auto_visualizer`, and `text_cleaner` — to help identify data types, visualize datasets automatically, and clean text data efficiently.
 
 This project demonstrates **modular programming** and **open-source library structure** development as part of the BCAP204 coursework.
 
 ---
 
-**Modules in the Library**
+## 🧩 Modules in the Library
 
-**1.column_detector**
+### 🔹 1. `column_detector`
 - Detects column types in a DataFrame (numerical, categorical, or text).
 - Helps in selecting the correct preprocessing or visualization method.
 
-**2.auto_visualizer**
-Automatically generates relevant visualizations for each column type.
-Creates:
- Numerical → Histogram, Boxplot, Scatter plot  
- Categorical → Count plot, Bar chart  
- Text → Word cloud, Top word frequency chart  
+### 🔹 2. `auto_visualizer`
+- Automatically generates relevant visualizations for each column type.
+- Creates:
+  - **Numerical** → Histogram, Boxplot, Scatter plot  
+  - **Categorical** → Count plot, Bar chart  
+  - **Text** → Word cloud, Top word frequency chart  
 
-**3. text_cleaner**
-Cleans and preprocesses text data.
-Features:
- Converts text to lowercase  
- Removes punctuation and filler words  
- Removes stopwords  
- Applies lemmatization (via NLTK)
+### 🔹 3. `text_cleaner`
+- Cleans and preprocesses text data.
+- Features:
+  - Converts text to lowercase  
+  - Removes punctuation and filler words  
+  - Removes stopwords  
+  - Applies lemmatization (via NLTK)
 
 ---
 
-**Installation Steps**
+## ⚙️ Installation Steps
 
 1. Open **PowerShell** or **Command Prompt**.
 2. Navigate to your project folder:
@@ -43,27 +48,28 @@ Features:
 Install the package locally:
 
 bash
-
+Copy code
 pip install .
 Install required dependencies (if not already installed):
 
 bash
-
+Copy code
 pip install pandas matplotlib seaborn wordcloud nltk
 (Optional) Download NLTK data for text processing:
 
+python
+Copy code
 import nltk
 nltk.download('wordnet')
 nltk.download('omw-1.4')
 nltk.download('stopwords')
-
-**Usage Example**
-
+🚀 Usage Example
+python
+Copy code
 import pandas as pd
 from ds_helper import detect_column_types, visualize, TextCleaner
 
-**Example dataset**
-
+# Example dataset
 df = pd.DataFrame({
     "Age": [23, 25, 30, 40, 29, 35],
     "Salary": [3000, 3500, 4000, 4200, 5000, 5500],
@@ -78,20 +84,21 @@ df = pd.DataFrame({
     ]
 })
 
-1️⃣ Detect column types
+# 1️⃣ Detect column types
 print(detect_column_types(df))
 
-2️⃣ Visualize the data automatically
+# 2️⃣ Visualize the data automatically
 visualize(df)
 
-3️⃣ Clean text data
+# 3️⃣ Clean text data
 cleaner = TextCleaner()
 cleaned_df = cleaner.clean_dataframe(df, ["Review"])
 print(cleaned_df)
-
-Test with Real Dataset (Example)
+🧪 Test with Real Dataset (Example)
 You can test ds_helper using a built-in dataset from Seaborn (e.g., Titanic):
 
+python
+Copy code
 import seaborn as sns
 from ds_helper import detect_column_types, visualize, TextCleaner
 
@@ -107,10 +114,9 @@ visualize(titanic)
 sample = titanic[["who", "embarked"]].dropna().head(5)
 cleaner = TextCleaner()
 print(cleaner.clean_dataframe(sample, ["who"]))
-
-**Project Structure**
-
-
+📂 Project Structure
+markdown
+Copy code
 ds_helper/
 │
 ├── setup.py
