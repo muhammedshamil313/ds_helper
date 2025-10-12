@@ -1,13 +1,10 @@
-# 🧠 ds_helper Library
+# ds_helper Library
 
 ### Created by: **Muhammed Shamil**  
 ### Course: **BCAP204 – Data Science Project**  
-### Week 4: **ds_helper Library Integration**  
-### Deadline: **7th October**
-
 ---
 
-## 📘 Project Overview
+##  Project Overview
 
 **ds_helper** is a lightweight and reusable Python library designed to simplify **data analysis and preprocessing** tasks.  
 It integrates three key modules — `column_detector`, `auto_visualizer`, and `text_cleaner` — to help identify data types, visualize datasets automatically, and clean text data efficiently.
@@ -16,20 +13,20 @@ This project demonstrates **modular programming** and **open-source library stru
 
 ---
 
-## 🧩 Modules in the Library
+##  Modules in the Library
 
-### 🔹 1. `column_detector`
+###  1. `column_detector`
 - Detects column types in a DataFrame (numerical, categorical, or text).
 - Helps in selecting the correct preprocessing or visualization method.
 
-### 🔹 2. `auto_visualizer`
+###  2. `auto_visualizer`
 - Automatically generates relevant visualizations for each column type.
 - Creates:
   - **Numerical** → Histogram, Boxplot, Scatter plot  
   - **Categorical** → Count plot, Bar chart  
   - **Text** → Word cloud, Top word frequency chart  
 
-### 🔹 3. `text_cleaner`
+###  3. `text_cleaner`
 - Cleans and preprocesses text data.
 - Features:
   - Converts text to lowercase  
@@ -39,7 +36,7 @@ This project demonstrates **modular programming** and **open-source library stru
 
 ---
 
-## ⚙️ Installation Steps
+##  Installation Steps
 
 1. Open **PowerShell** or **Command Prompt**.
 2. Navigate to your project folder:
@@ -63,7 +60,7 @@ import nltk
 nltk.download('wordnet')
 nltk.download('omw-1.4')
 nltk.download('stopwords')
-🚀 Usage Example
+ Usage Example
 python
 Copy code
 import pandas as pd
@@ -94,7 +91,8 @@ visualize(df)
 cleaner = TextCleaner()
 cleaned_df = cleaner.clean_dataframe(df, ["Review"])
 print(cleaned_df)
-🧪 Test with Real Dataset (Example)
+
+ Test with Real Dataset (Example)
 You can test ds_helper using a built-in dataset from Seaborn (e.g., Titanic):
 
 python
@@ -114,7 +112,8 @@ visualize(titanic)
 sample = titanic[["who", "embarked"]].dropna().head(5)
 cleaner = TextCleaner()
 print(cleaner.clean_dataframe(sample, ["who"]))
-📂 Project Structure
+
+ Project Structure
 markdown
 Copy code
 ds_helper/
