@@ -55,7 +55,7 @@ nltk.download('wordnet')
 nltk.download('omw-1.4')
 nltk.download('stopwords')
 
- Usage Example
+## Usage Example
 import pandas as pd
 from ds_helper import detect_column_types, visualize, TextCleaner
 
@@ -85,7 +85,8 @@ cleaner = TextCleaner()
 cleaned_df = cleaner.clean_dataframe(df, ["Review"])
 print(cleaned_df)
 
- Test with Real Dataset (Example)
+## Test with Real Dataset (Example)
+
 You can test ds_helper using a built-in dataset from Seaborn (e.g., Titanic):
 
 import seaborn as sns
@@ -104,9 +105,8 @@ sample = titanic[["who", "embarked"]].dropna().head(5)
 cleaner = TextCleaner()
 print(cleaner.clean_dataframe(sample, ["who"]))
 
- Project Structure
-markdown
-Copy code
+## Project Structure
+
 ds_helper/
 │
 ├── setup.py
